@@ -40,13 +40,16 @@ public class PlayerControl : MonoBehaviour
 
     void Move()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("vertical");
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("vertical");
 
-        Vector3 move = new Vector3(x, 0, z);
-        transform.Translate(move * moveSpeed * Time.deltaTime,Space.World);
+            Vector3 move = new Vector3(x, 0, z);
+            transform.Translate(move * moveSpeed * Time.deltaTime, Space.World);
 
-        animator.SetFloat("Speed", move.magnitude);
+            animator.SetFloat("Speed", move.magnitude);
+        }
     }
 
     //Punch
