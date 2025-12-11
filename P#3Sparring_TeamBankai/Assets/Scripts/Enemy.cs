@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        player = GameObject.FindGameObjectsWithTag("Player").transform;
+        
         spawner = FindObjectOfType<EnemySpawner>();
     }
 
